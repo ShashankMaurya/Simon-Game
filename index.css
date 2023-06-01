@@ -37,9 +37,9 @@ body {
 .btn {
     width: 30vh;
     height: 30vh;
-    margin: 0vh;
+    /* margin: 0vh;  */
     border: 15px solid black;
-    border-radius: 28%;
+    border-radius: 21%;
 }
 
 .game-over {
