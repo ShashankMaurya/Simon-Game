@@ -80,6 +80,23 @@ body {
     background-color: yellow;
 }
 
+
+@media (min-width: 500px) and (max-width: 700px) {
+    .btn{
+        height: 25vh;
+        width: 25vh;
+    }
+
+    .row{
+        width: 64vh;
+    }
+
+    .container{
+        width: 64vh;
+        height: 60vh;
+    }
+}
+
 @media (max-width: 500px) {
     .btn{
         height: 20vh;
