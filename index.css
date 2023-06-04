@@ -21,7 +21,7 @@ body {
     align-items: center;
     justify-items: center;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
     justify-content: space-between;
     margin: auto;
@@ -78,4 +78,20 @@ body {
 
 #yellow {
     background-color: yellow;
+}
+
+@media (max-width: 500px) {
+    .btn{
+        height: 20vh;
+        width: 20vh;
+    }
+
+    .row{
+        width: 50vh;
+    }
+
+    .container{
+        width: 50vh;
+        height: 60vh;
+    }
 }
