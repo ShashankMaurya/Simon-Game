@@ -46,7 +46,7 @@ body {
 
 .pressed {
     transform: scale(0.98);
-    box-shadow: 4px 4px 13px 1px rgba(0, 0, 0, 0.24);
+    box-shadow: 4px 4px 13px 1px rgba(195, 194, 194, 0.774);
 }
 
 .btn:hover{
