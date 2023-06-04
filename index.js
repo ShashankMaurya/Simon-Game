@@ -25,18 +25,18 @@ $('.btn').click(function () {
 });
 
 $('body').keypress(function (event) {
-    // startGame(event.which);
     let gameTrigger = false;
     if (event.which === 32) {
         gameTrigger = true;
         $('body').removeClass('game-over');
+        $('h5').remove('#restart');
+        $('h1#title').css('margin', '4%')
         startGame(gameTrigger);
     }
 });
 
 // Resource Functions
 async function pressBtn(color) {
-    // console.log(color);
     playSound(color);
     $('.btn#' + color).addClass('pressed');
     setTimeout(function () {
@@ -63,14 +63,6 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// var btnPressed = false;
-// async function waitForIt() {
-//     if (!btnPressed) {
-//         console.log('wait for it called.');
-//         setTimeout(waitForIt, 100);
-//     }
-// }
-
 function waitForBtnClick() {
     return new Promise(resolve => {
         $('.btn').click((event) => resolve(event.target.id));
@@ -78,10 +70,6 @@ function waitForBtnClick() {
 }
 
 async function startGame(gameTrigger) {
-    // let gameTrigger = false;
-    // if (key === 32) {
-    //     gameTrigger = true;
-    // }
 
     $('h1#title').text('Starting...');
     await sleep(1500);
@@ -90,13 +78,7 @@ async function startGame(gameTrigger) {
     while (gameTrigger) {
         $('h1#title').text(`Level ${i}`);
         let currentPattern = randomPatternGenerator(i);
-        console.log(currentPattern);
-        // console.log(i);
         await sleep(1500);
-        // currentPattern.forEach(async function (element) {
-        //     await pressBtn(element);
-        //     await sleep(1500);
-        // });
 
         for (let j = 0; j < currentPattern.length; j++) {
             await sleep(1500);
@@ -106,51 +88,25 @@ async function startGame(gameTrigger) {
         // taking Input
 
         let correctBtnPressed = false;
-        // let clicked = false;
         for (let j = 0; j < currentPattern.length; j++) {
-            // await waitForIt();
-            // await getPromiseFromEvent('.btn', 'click');
-            // $('.btn').click(() => {
             let btnId = await waitForBtnClick();
-            console.log(btnId);
-            // clicked = true;
             pressBtn(btnId);
-            // btnPressed = true;
             correctBtnPressed = btnId == currentPattern[j];
-            console.log(correctBtnPressed);
-            // });
             if (!correctBtnPressed) {
                 $('body').addClass('game-over');
-                // setTimeout(() => $('body').removeClass('game-over'), 1000);
-                $('h1#title').html('Game Over!!!<br><br>Press &lt;space&gt; Key to Start');
+                $('h1#title').text('Game Over!!!');
+                $('h1#title').css('margin', '2%')
+                $('h1#title').after('<h5 id="restart">Press &lt;space&gt; to Start</h5>');
+                new Audio('sounds/wrong.mp3').play();
                 gameTrigger = false;
                 break;
             }
-            // btnPressed = false;
-            // });
-            // if(clicked && correctBtnPressed){
-            //     console.log('if condn');
-            //     j++;
-            // }
-            // if (!correctBtnPressed) {
-            //     break;
-            // }
-            // else if (clicked){
-            //     console.log('else if condn');
-            //     break;
-            // }
-
         }
 
         if (gameTrigger) {
             $('h1#title').text(`Level ${i} Completed!`);
-            await sleep(1500);
+            await sleep(2000);
         }
-
-        // if (i === 5) {
-        //     gameTrigger = false;
-        // }
-        // alert(`iteration ${i++} Completed`);
         i++;
     }
 }

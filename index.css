@@ -3,11 +3,17 @@ body {
     background-color: #011F3F;
 }
 
-#title {
+#title,
+#restart {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     margin: 4%;
     color: #FEF2BF;
+}
+
+#restart{
+    margin-top: 1%;
+    font-size: 1.9rem;
 }
 
 .container {
@@ -49,7 +55,7 @@ body {
     box-shadow: 4px 4px 13px 1px rgba(195, 194, 194, 0.774);
 }
 
-.btn:hover{
+.btn:hover {
     opacity: 80%;
 }
 
