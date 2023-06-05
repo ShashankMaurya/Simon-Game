@@ -1,17 +1,24 @@
 body {
     text-align: center;
     background-color: #011F3F;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 #title,
 #restart {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
-    margin: 4%;
+    margin: 3%;
+    margin-bottom: 2.5%;
     color: #FEF2BF;
 }
 
-#restart{
+#restart {
     margin-top: 1%;
     font-size: 1.9rem;
 }
@@ -27,6 +34,7 @@ body {
     margin: auto;
     width: 90vh;
     height: 70vh;
+    margin-top: 2%;
 }
 
 .row {
@@ -80,35 +88,73 @@ body {
     background-color: yellow;
 }
 
+.start {
+    height: 70px;
+    width: 70px;
+    position: relative;
+    top: -40.5vh;
+    /* left: -0vw; */
+    border-radius: 50%;
+    text-align: center;
+}
+
+.start object {
+    height: 30px;
+    width: 30px;
+}
 
 @media (min-width: 500px) and (max-width: 700px) {
-    .btn{
+    .btn {
         height: 25vh;
         width: 25vh;
     }
 
-    .row{
+    .row {
         width: 64vh;
     }
 
-    .container{
+    .container {
         width: 64vh;
-        height: 60vh;
+        height: 64vh;
+    }
+
+    .start {
+        height: 48px;
+        width: 48px;
+        top: -35.5vh;
+        /* left: -0vw; */
+    }
+
+    .start object {
+        height: 23px;
+        width: 23px;
     }
 }
 
 @media (max-width: 500px) {
-    .btn{
+    .btn {
         height: 20vh;
         width: 20vh;
     }
 
-    .row{
-        width: 50vh;
+    .row {
+        width: 54vh;
     }
 
-    .container{
-        width: 50vh;
+    .container {
+        width: 60vh;
         height: 60vh;
+    }
+
+    .start {
+        height: 45px;
+        width: 45px;
+        top: -33.5vh;
+        /* left: -0vw; */
+    }
+
+    .start object {
+        height: 20px;
+        width: 20px;
     }
 }
