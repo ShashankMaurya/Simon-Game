@@ -108,7 +108,7 @@ async function startGame(gameTrigger) {
                 $('h1#title').text('Game Over!!!');
                 $('h1#title').css('margin', '2%')
                 $('h1#title').after('<h5 id="restart">Press &lt;space&gt; to Start</h5>');
-                $('.start').css('display', 'inline-block');
+                $('.start').css('display', 'block');
                 $('body').keypress((event) => {
                     playGame(event.which)
                 });

@@ -95,10 +95,10 @@ body::-webkit-scrollbar {
     top: -40.5vh;
     /* left: -0vw; */
     border-radius: 50%;
-    text-align: center;
+    /* text-align: center; */
 }
 
-.start object {
+.start_btn {
     height: 30px;
     width: 30px;
 }
@@ -125,7 +125,7 @@ body::-webkit-scrollbar {
         /* left: -0vw; */
     }
 
-    .start object {
+    .start_btn {
         height: 23px;
         width: 23px;
     }
@@ -153,7 +153,7 @@ body::-webkit-scrollbar {
         /* left: -0vw; */
     }
 
-    .start object {
+    .start_btn {
         height: 20px;
         width: 20px;
     }
