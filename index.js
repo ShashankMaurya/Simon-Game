@@ -30,8 +30,8 @@ $('body').keypress((event) => {
 });
 
 $('.start').click(function() {
-    console.log('click');
-    // playGame(undefined, true)
+    // console.log('click');
+    playGame(undefined, true)
 });
 
 // Resource Functions
