@@ -31,7 +31,7 @@ $('body').keypress((event) => {
 
 $('.start').click(function() {
     console.log('click');
-    playGame(undefined, true)
+    // playGame(undefined, true)
 });
 
 // Resource Functions

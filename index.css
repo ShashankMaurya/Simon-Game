@@ -131,7 +131,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 500px) and (orientation: portrait){
     .btn {
         height: 20vh;
         width: 20vh;
