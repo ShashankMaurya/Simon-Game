@@ -26,7 +26,12 @@ $('.btn').click(function () {
 });
 
 $('body').keypress((event) => {
-    playGame(event.which);
+    playGame(event.which)
+});
+
+$('.start').click(function() {
+    console.log('click');
+    playGame(undefined, true)
 });
 
 // Resource Functions
@@ -38,14 +43,14 @@ async function pressBtn(color) {
     }, 200);
 }
 
-function playGame(key, btnPressed = false) {
+function playGame(key, btnPressed=false) {    
     let gameTrigger = false;
     if (btnPressed || key === 32) {
         gameTrigger = true;
         $('body').removeClass('game-over');
         $('h5').remove('#restart');
         $('h1#title').css('margin', '4%')
-        // $('.start').css('display', 'none');
+        $('.start').css('display', 'none');
         $('body').unbind('keypress');
         startGame(gameTrigger);
     }
@@ -103,8 +108,9 @@ async function startGame(gameTrigger) {
                 $('h1#title').text('Game Over!!!');
                 $('h1#title').css('margin', '2%')
                 $('h1#title').after('<h5 id="restart">Press &lt;space&gt; to Start</h5>');
+                $('.start').css('display', 'inline-block');
                 $('body').keypress((event) => {
-                    playGame(event.which);
+                    playGame(event.which)
                 });
                 new Audio('sounds/wrong.mp3').play();
                 gameTrigger = false;
