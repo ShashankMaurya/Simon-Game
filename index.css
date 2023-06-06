@@ -9,6 +9,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+#title{
+    height: 100px;
+}
+
 #title,
 #restart {
     font-family: 'Press Start 2P', cursive;
@@ -142,6 +146,7 @@ body::-webkit-scrollbar {
     }
 
     .container {
+        margin-top: 25%;
         width: 45vh;
         height: 45vh;
     }
@@ -156,6 +161,14 @@ body::-webkit-scrollbar {
     .start_btn {
         height: 20px;
         width: 20px;
+    }
+
+    #title{
+        font-size: 2rem;
+    }
+
+    #restart{
+        font-size: 1rem;
     }
 }
 
